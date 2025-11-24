@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBambu - Plan Estratégico Q1 2026</title>
+    <style>
+        :root {
+            /* MyBambu Brand Colors */
+            --primary-green: #09FC04;
+            --primary-blue: #296BFF;
+            --dark-navy: #0D1752;
+            --light-blue: #1863DC;
+            --lime-green: #70E242;
+            --accent-green: #17CA60;
+            --bg-light: #F2F4FF;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #1a2a6c 100%);
+            color: white;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(9,252,4,0.1) 0%, rgba(41,107,255,0.1) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(9,252,4,0.3);
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 20px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--primary-green);
+            color: var(--dark-navy);
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        .section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--primary-green);
+            border-radius: 50%;
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(9,252,4,0.1), rgba(41,107,255,0.1));
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(9,252,4,0.2);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .metric-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .metric-card.danger .metric-value { color: var(--danger); }
+        .metric-card.warning .metric-value { color: var(--warning); }
+        .metric-card.success .metric-value { color: var(--success); }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        th {
+            background: rgba(9,252,4,0.2);
+            color: var(--primary-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* Audience Cards */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .audience-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .audience-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .audience-card .size {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .audience-card .desc {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Phase Cards */
+        .phase-card {
+            background: linear-gradient(135deg, rgba(9,252,4,0.05), rgba(41,107,255,0.05));
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(9,252,4,0.2);
+        }
+
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .phase-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: var(--dark-navy);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .phase-title {
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        .phase-dates {
+            background: rgba(9,252,4,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--primary-green);
+            font-size: 0.9rem;
+        }
+
+        /* Brand Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            border-top: 3px solid var(--primary-green);
+        }
+
+        .pillar-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .pillar h4 {
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .pillar p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Email Calendar Table */
+        .email-row {
+            transition: all 0.2s;
+        }
+
+        .email-row:hover {
+            background: rgba(9,252,4,0.1);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-primary { background: rgba(9,252,4,0.2); color: var(--primary-green); }
+        .badge-accent { background: rgba(41,107,255,0.2); color: var(--primary-blue); }
+        .badge-warning { background: rgba(245,158,11,0.2); color: var(--warning); }
+        .badge-danger { background: rgba(239,68,68,0.2); color: var(--danger); }
+
+        /* Dashboard Section */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .kpi-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .kpi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .kpi-title {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .kpi-target {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+            border-radius: 4px;
+            transition: width 0.5s;
+        }
+
+        /* Q4 Connection Box */
+        .q4-connection {
+            background: linear-gradient(135deg, rgba(41,107,255,0.15), rgba(9,252,4,0.15));
+            border: 2px solid var(--primary-blue);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .q4-connection h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 50px;
+        }
+
+        /* Note/Footnote */
+        .footnote {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255,255,255,0.2);
+        }
+
+        /* Source Reference */
+        .source-ref {
+            background: rgba(41,107,255,0.1);
+            border-left: 3px solid var(--primary-blue);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .section {
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">MyBambu</div>
+            <h1 class="subtitle">Plan Estratégico de Retención Q1 2026</h1>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 20px;">
+                "Tu Banco Seguro. Tu Cuenta Todo-en-Uno. Tu Tarjeta de Cada Día."
+            </p>
+            <span class="date-badge">Enero - Marzo 2026</span>
+        </header>
+
+        <!-- DISCLAIMER -->
+        <section style="background: rgba(245,158,11,0.15); border: 2px solid var(--warning); border-radius: 12px; padding: 20px; margin-bottom: 30px;">
+            <h4 style="color: var(--warning); margin-bottom: 10px;">Nota Importante: Datos Reales vs Sugerencias</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+                <div>
+                    <strong style="color: var(--primary-green);">DATOS REALES (del Comprehensive Customer Analysis):</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>71.67% churn rate (90+ días)</li>
+                        <li>24.9% pérdida mensual</li>
+                        <li>143,368 clientes churned</li>
+                        <li>28,551 usuarios activos</li>
+                        <li>3.9 meses lifetime promedio</li>
+                        <li>Tasas de churn por estado</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong style="color: var(--warning);">SUGERENCIAS (a validar con el equipo):</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Targets de reactivación</li>
+                        <li>KPIs de email (basados en benchmarks)</li>
+                        <li>Tácticas y journeys propuestos</li>
+                        <li>Calendario de emails</li>
+                        <li>Criterios de éxito</li>
+                        <li>Cualquier número marcado con *</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Q4 Connection Section -->
+        <section class="q4-connection">
+            <h3>Conexión con Estrategia Q4 2025 en Curso</h3>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+                Este plan Q1 2026 es la <strong>continuación natural</strong> de la estrategia de retención iniciada en Q4 2025.
+                Tras revisar las métricas compartidas por el presidente (comprehensive-customer-analysis), el plan actual ya contempla
+                las observaciones y se está ejecutando con enfoque en retención.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+                    <h4 style="color: var(--primary-green); margin-bottom: 10px;">Lo que YA estamos haciendo (Q4 2025)</h4>
+                    <ul style="color: rgba(255,255,255,0.8); margin-left: 20px; font-size: 0.9rem;">
+                        <li>18 emails de campaña end-of-year</li>
+                        <li>4 audiencias segmentadas (C, D, E, E-Bonus)</li>
+                        <li>241k+ usuarios addressable</li>
+                        <li>Journeys de reactivación en Insider</li>
+                        <li>Focus en merchants: Lyft, DoorDash, Walgreens, CVS</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+                    <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Ajustes basados en el Comprehensive Customer Analysis</h4>
+                    <ul style="color: rgba(255,255,255,0.8); margin-left: 20px; font-size: 0.9rem;">
+                        <li>71.67% churn confirmado → targets ajustados</li>
+                        <li>24.9% pérdida mensual → urgencia en reactivación</li>
+                        <li>Enfoque geográfico (FL, NY, TX, GA) incorporado</li>
+                        <li>LTV $15.60 → ROI calculations actualizados</li>
+                        <li>3.9 meses lifetime → focus en primeros 90 días</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: rgba(9,252,4,0.1); padding: 15px; border-radius: 8px; border-left: 4px solid var(--primary-green);">
+                <strong style="color: var(--primary-green);">Mensaje clave:</strong>
+                <span style="color: rgba(255,255,255,0.9);">El plan ya está en marcha desde Q4. Q1 2026 escala lo que funciona y ataca el "núcleo duro"
+                de churned users con approach data-driven basado en las métricas compartidas.</span>
+            </div>
+        </section>
+
+        <!-- Executive Summary -->
+        <section class="section">
+            <h2 class="section-title">Resumen Ejecutivo</h2>
+            <div class="metrics-grid">
+                <div class="metric-card danger">
+                    <div class="metric-value">71.67%</div>
+                    <div class="metric-label">Churn Actual (90+ días)</div>
+                </div>
+                <div class="metric-card warning">
+                    <div class="metric-value">24.9%</div>
+                    <div class="metric-label">Pérdida Mensual</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">28,551</div>
+                    <div class="metric-label">Usuarios Activos</div>
+                </div>
+                <div class="metric-card success">
+                    <div class="metric-value">3.9</div>
+                    <div class="metric-label">Meses Lifetime Promedio</div>
+                </div>
+            </div>
+
+            <div style="background: rgba(239,68,68,0.1); padding: 20px; border-radius: 12px; border-left: 4px solid var(--danger);">
+                <h4 style="color: var(--danger); margin-bottom: 10px;">El Problema (Datos del Comprehensive Customer Analysis)</h4>
+                <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                    <li><strong>143,368 clientes</strong> han abandonado (90+ días sin actividad)</li>
+                    <li><strong>29,784 clientes</strong> se pierden cada mes</li>
+                    <li>Tiempo de vida promedio: <strong>3.9 meses</strong></li>
+                    <li>LTV Margin: <strong>$15.60</strong> por cliente</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Brand Positioning -->
+        <section class="section">
+            <h2 class="section-title">Posicionamiento de Marca Q1 2026</h2>
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <div class="pillar-icon">🔒</div>
+                    <h4>BANCO SEGURO</h4>
+                    <p>Tu dinero protegido. Cuenta asegurada por FDIC. Transacciones seguras 24/7.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🌟</div>
+                    <h4>TODO-EN-UNO</h4>
+                    <p>Una sola app para todo en USA. Pagos, transferencias, depósitos, tarjeta.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">💳</div>
+                    <h4>TARJETA DIARIA</h4>
+                    <p>Tu tarjeta para compras del día a día. Recibe tu sueldo directo. Usa en todas partes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audiences -->
+        <section class="section">
+            <h2 class="section-title">Audiencias Objetivo</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <h4>AUDIENCIA A - "Fresh Inactives"</h4>
+                    <div class="size">~34,000</div>
+                    <div class="desc">Activos en Oct 2025, Inactivos en Nov 2025</div>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.8);">
+                        <strong>Estrategia:</strong> Reactivación urgente - aún están "tibios"<br>
+                        <strong>Mensaje:</strong> "Te extrañamos - vuelve y descubre las novedades"
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <h4>AUDIENCIA B - "Deep Churned"</h4>
+                    <div class="size">~45,000</div>
+                    <div class="desc">Inactivos en Sep Y Oct 2025</div>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.8);">
+                        <strong>Estrategia:</strong> Win-back agresivo con incentivos<br>
+                        <strong>Mensaje:</strong> "Ha pasado tiempo - mira todo lo que has perdido"
+                    </p>
+                </div>
+                <div class="audience-card">
+                    <h4>AUDIENCIA C - "Internal Clusters"</h4>
+                    <div class="size">~84,000</div>
+                    <div class="desc">Segmentación interna por comportamiento</div>
+                    <p style="margin-top: 15px; color: rgba(255,255,255,0.8);">
+                        <strong>Estrategia:</strong> Comunicación personalizada por uso<br>
+                        <strong>Mensaje:</strong> Varía según cluster (Lyft users, DoorDash, etc.)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geographic Focus -->
+        <section class="section">
+            <h2 class="section-title">Enfoque Geográfico Prioritario</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Estado</th>
+                            <th>Tasa de Churn</th>
+                            <th>Clientes Perdidos/Mes</th>
+                            <th>Prioridad</th>
+                            <th>Estrategia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Florida</strong></td>
+                            <td style="color: var(--danger);">30.76%</td>
+                            <td>3,436</td>
+                            <td><span class="badge badge-danger">CRÍTICA</span></td>
+                            <td>Campañas geo-targeted, mensajes en español</td>
+                        </tr>
+                        <tr>
+                            <td><strong>New York</strong></td>
+                            <td style="color: var(--warning);">27.41%</td>
+                            <td>1,906</td>
+                            <td><span class="badge badge-danger">ALTA</span></td>
+                            <td>Focus en comunidad latina, competencia local</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Texas</strong></td>
+                            <td style="color: var(--warning);">~26%</td>
+                            <td>4,635</td>
+                            <td><span class="badge badge-warning">ALTA</span></td>
+                            <td>Mayor volumen absoluto, optimizar retención</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Georgia</strong></td>
+                            <td style="color: var(--warning);">~24.5%</td>
+                            <td>1,219</td>
+                            <td><span class="badge badge-warning">MEDIA</span></td>
+                            <td>Comunidad latina creciente, Atlanta hub</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pennsylvania</strong></td>
+                            <td style="color: var(--warning);">27.32%</td>
+                            <td>1,200+</td>
+                            <td><span class="badge badge-primary">MEDIA</span></td>
+                            <td>Monitorear tendencias, campañas reactivas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="footnote">
+                * <strong>Hawaii excluido del enfoque:</strong> Aunque presenta alta tasa de churn (39.74%), no es mercado prioritario
+                debido a: (1) población latina mínima, (2) costo de adquisición elevado por aislamiento geográfico,
+                (3) economía predominantemente turística con base de residentes muy pequeña. ROI de campañas sería bajo.
+            </p>
+        </section>
+
+        <!-- Phase 1 -->
+        <section class="section">
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span class="phase-number">1</span>
+                        <div>
+                            <h3 class="phase-title">"Año Nuevo, Banco Nuevo"</h3>
+                            <p style="color: rgba(255,255,255,0.6);">Reactivación Post-Fiestas</p>
+                        </div>
+                    </div>
+                    <span class="phase-dates">6 - 31 Enero 2026</span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">Objetivos (SUGERIDOS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>Reactivar 3,000-4,500 cuentas dormidas *</li>
+                            <li>Capturar momentum de "propósitos de año nuevo"</li>
+                            <li>Establecer MyBambu como "fresh start financiero"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">Tácticas (SUGERIDAS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>Journey "Fresh Start" para Audiencia A</li>
+                            <li>Campaña "Vuelve y Gana" para Audiencia B</li>
+                            <li>Push notifications + Email + SMS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">KPIs Target (SUGERIDOS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>Open Rate: >26% *</li>
+                            <li>CTR: >5.5% *</li>
+                            <li>Reactivation Rate: >8% *</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 2 -->
+        <section class="section">
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span class="phase-number">2</span>
+                        <div>
+                            <h3 class="phase-title">"Hazla Tu Cuenta Principal"</h3>
+                            <p style="color: rgba(255,255,255,0.6);">Direct Deposit & Main Account Push</p>
+                        </div>
+                    </div>
+                    <span class="phase-dates">1 - 28 Febrero 2026</span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">Objetivos (SUGERIDOS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>Convertir 2,500-3,500 a Direct Deposit *</li>
+                            <li>Aumentar transacciones promedio por usuario</li>
+                            <li>Posicionar como "cuenta principal"</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">Tácticas (SUGERIDAS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>Campaña "Recibe Tu Sueldo 2 Días Antes"</li>
+                            <li>Tutorial step-by-step para DD setup</li>
+                            <li>Incentivo por primer DD (monto a definir)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">KPIs Target (SUGERIDOS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>DD Conversion: >15% *</li>
+                            <li>Avg Transactions: +20% *</li>
+                            <li>Retention Rate: >85% *</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 3 -->
+        <section class="section">
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span class="phase-number">3</span>
+                        <div>
+                            <h3 class="phase-title">"Ya Eres Parte del Club"</h3>
+                            <p style="color: rgba(255,255,255,0.6);">Habit Formation & Loyalty</p>
+                        </div>
+                    </div>
+                    <span class="phase-dates">1 - 31 Marzo 2026</span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">Objetivos (SUGERIDOS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>Crear hábito de uso semanal</li>
+                            <li>Reducir churn mensual *</li>
+                            <li>Aumentar NPS y referrals</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">Tácticas (SUGERIDAS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>"7-Day Challenge" - usa tu tarjeta 7 días</li>
+                            <li>Partner rewards (Lyft, DoorDash - a negociar)</li>
+                            <li>Programa de referidos potenciado</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-green); margin-bottom: 10px;">KPIs Target (SUGERIDOS)</h4>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                            <li>Weekly Active Users: +25% *</li>
+                            <li>Referral Rate: >5% *</li>
+                            <li>Monthly Churn: <22% *</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Calendar -->
+        <section class="section">
+            <h2 class="section-title">Calendario de Emails Q1 2026 (PROPUESTA)</h2>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 10px;">
+                Benchmarks FinTech de referencia: Open Rate 25.78% | CTR 5.37% | Delivery 95.19% | Unsubscribe &lt;1%
+            </p>
+            <p style="color: var(--warning); margin-bottom: 20px; font-style: italic; font-size: 0.9rem;">
+                * Este calendario es una SUGERENCIA. Las temáticas, fechas y audiencias deben validarse con el equipo.
+            </p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Fecha</th>
+                            <th>Día/Hora</th>
+                            <th>Temática</th>
+                            <th>Audiencia</th>
+                            <th>Size Est.</th>
+                            <th>Pilar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- FASE 1: ENERO -->
+                        <tr style="background: rgba(9,252,4,0.1);">
+                            <td colspan="7"><strong>FASE 1: ENERO 2026 - "Año Nuevo, Banco Nuevo"</strong></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>1</td>
+                            <td>6 Ene</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Año Nuevo, Finanzas Nuevas</strong><br><small>Propósitos financieros 2026, MyBambu como tu aliado</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-primary">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>2</td>
+                            <td>8 Ene</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>Tu Dinero Está Seguro Con Nosotros</strong><br><small>FDIC, seguridad, protección contra fraude</small></td>
+                            <td>B (Deep Churned)</td>
+                            <td>~45K</td>
+                            <td><span class="badge badge-danger">Seguridad</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>3</td>
+                            <td>10 Ene</td>
+                            <td>Viernes 11AM</td>
+                            <td><strong>Lo Que Te Perdiste en 2025</strong><br><small>Nuevas features, mejoras, beneficios añadidos</small></td>
+                            <td>B (Deep Churned)</td>
+                            <td>~45K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>4</td>
+                            <td>13 Ene</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>¿Sabías Que Puedes...?</strong><br><small>Feature discovery - funciones poco usadas</small></td>
+                            <td>A (Fresh)</td>
+                            <td>~34K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>5</td>
+                            <td>15 Ene</td>
+                            <td>Miércoles 12PM</td>
+                            <td><strong>Paga Tu Lyft/Uber con MyBambu</strong><br><small>Merchant-specific para usuarios de rideshare</small></td>
+                            <td>C (Clusters - Lyft)</td>
+                            <td>~25K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>6</td>
+                            <td>17 Ene</td>
+                            <td>Viernes 3PM</td>
+                            <td><strong>Fin de Semana: Pide Tu Comida</strong><br><small>DoorDash/UberEats users, weekend spending</small></td>
+                            <td>C (Clusters - Food)</td>
+                            <td>~20K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>7</td>
+                            <td>20 Ene</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>MLK Day: Tu Libertad Financiera</strong><br><small>Mensaje inspiracional, independencia económica</small></td>
+                            <td>A + B</td>
+                            <td>~79K</td>
+                            <td><span class="badge badge-primary">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>8</td>
+                            <td>22 Ene</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>3 Razones Para Volver</strong><br><small>Win-back con beneficios concretos</small></td>
+                            <td>B (Deep Churned)</td>
+                            <td>~45K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>9</td>
+                            <td>24 Ene</td>
+                            <td>Viernes 11AM</td>
+                            <td><strong>Último Chance: Oferta de Enero</strong><br><small>Urgencia, incentivo por reactivación</small></td>
+                            <td>A + B</td>
+                            <td>~79K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>10</td>
+                            <td>27 Ene</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Florida: Especial Para Ti</strong><br><small>Geo-targeted, comunidad latina FL</small></td>
+                            <td>Geo: Florida</td>
+                            <td>~12K</td>
+                            <td><span class="badge badge-danger">Seguridad</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>11</td>
+                            <td>29 Ene</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>NYC: Tu Cuenta en la Gran Manzana</strong><br><small>Geo-targeted, competencia local NY</small></td>
+                            <td>Geo: New York</td>
+                            <td>~10K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>12</td>
+                            <td>31 Ene</td>
+                            <td>Viernes 11AM</td>
+                            <td><strong>Resumen de Enero + Preview Febrero</strong><br><small>Recap, engagement, teaser Direct Deposit</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-primary">All-in-One</span></td>
+                        </tr>
+
+                        <!-- FASE 2: FEBRERO -->
+                        <tr style="background: rgba(41,107,255,0.1);">
+                            <td colspan="7"><strong>FASE 2: FEBRERO 2026 - "Hazla Tu Cuenta Principal"</strong></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>13</td>
+                            <td>3 Feb</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Recibe Tu Sueldo 2 Días Antes</strong><br><small>Direct Deposit principal benefit</small></td>
+                            <td>A + C (Activos)</td>
+                            <td>~118K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>14</td>
+                            <td>5 Feb</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>Cómo Configurar Direct Deposit</strong><br><small>Tutorial paso a paso, simple</small></td>
+                            <td>A + C (Sin DD)</td>
+                            <td>~80K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>15</td>
+                            <td>7 Feb</td>
+                            <td>Viernes 3PM</td>
+                            <td><strong>Fin de Semana de San Valentín</strong><br><small>Spending seasonal, regalos, salir a cenar</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>16</td>
+                            <td>10 Feb</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Texas: Todo Lo Que Necesitas</strong><br><small>Geo-targeted, mayor volumen absoluto</small></td>
+                            <td>Geo: Texas</td>
+                            <td>~15K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>17</td>
+                            <td>12 Feb</td>
+                            <td>Miércoles 12PM</td>
+                            <td><strong>¿Por Qué 2 Cuentas Si Puedes Tener 1?</strong><br><small>Consolidación, main account push</small></td>
+                            <td>A + C</td>
+                            <td>~118K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>18</td>
+                            <td>14 Feb</td>
+                            <td>Viernes 10AM</td>
+                            <td><strong>Happy Valentine's: Amor a Tu Dinero</strong><br><small>Seasonal, self-care financiero</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-danger">Seguridad</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>19</td>
+                            <td>17 Feb</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Presidents Day: Bank on Us</strong><br><small>Holiday tie-in, confianza institucional</small></td>
+                            <td>A + B</td>
+                            <td>~79K</td>
+                            <td><span class="badge badge-danger">Seguridad</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>20</td>
+                            <td>19 Feb</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>Usuarios Con DD: Así Les Va</strong><br><small>Social proof, testimonials DD users</small></td>
+                            <td>A + C (Sin DD)</td>
+                            <td>~80K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>21</td>
+                            <td>21 Feb</td>
+                            <td>Viernes 11AM</td>
+                            <td><strong>Última Semana: Bonus por DD</strong><br><small>Incentivo urgencia, deadline approaching</small></td>
+                            <td>A + C (Sin DD)</td>
+                            <td>~80K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>22</td>
+                            <td>24 Feb</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Protección 24/7: Tu Dinero Vigilado</strong><br><small>Security features, fraud protection</small></td>
+                            <td>B (Deep Churned)</td>
+                            <td>~45K</td>
+                            <td><span class="badge badge-danger">Seguridad</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>23</td>
+                            <td>26 Feb</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>Febrero Wrap-Up + Marzo Preview</strong><br><small>Recap, 7-Day Challenge teaser</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-primary">All-in-One</span></td>
+                        </tr>
+
+                        <!-- FASE 3: MARZO -->
+                        <tr style="background: rgba(245,158,11,0.1);">
+                            <td colspan="7"><strong>FASE 3: MARZO 2026 - "Ya Eres Parte del Club"</strong></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>24</td>
+                            <td>2 Mar</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>7-Day Challenge: ¿Te Atreves?</strong><br><small>Gamification, usa tu tarjeta 7 días seguidos</small></td>
+                            <td>A + C (Activos)</td>
+                            <td>~118K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>25</td>
+                            <td>4 Mar</td>
+                            <td>Miércoles 12PM</td>
+                            <td><strong>Día 3: ¿Cómo Vas?</strong><br><small>Challenge mid-point, encouragement</small></td>
+                            <td>Challenge Participants</td>
+                            <td>~50K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>26</td>
+                            <td>6 Mar</td>
+                            <td>Viernes 3PM</td>
+                            <td><strong>Fin de Semana: Último Push</strong><br><small>Challenge weekend spending boost</small></td>
+                            <td>Challenge Participants</td>
+                            <td>~50K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>27</td>
+                            <td>9 Mar</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>¡Lo Lograste! Challenge Complete</strong><br><small>Celebration, reward, habit formed</small></td>
+                            <td>Challenge Completers</td>
+                            <td>~30K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>28</td>
+                            <td>11 Mar</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>Invita a Un Amigo, Gana $X</strong><br><small>Referral program push</small></td>
+                            <td>A + C (Activos)</td>
+                            <td>~118K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>29</td>
+                            <td>13 Mar</td>
+                            <td>Viernes 11AM</td>
+                            <td><strong>Walgreens + CVS: Descuentos Exclusivos</strong><br><small>Partner rewards, pharmacy users</small></td>
+                            <td>C (Clusters - Pharmacy)</td>
+                            <td>~15K</td>
+                            <td><span class="badge badge-warning">Tarjeta Diaria</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>30</td>
+                            <td>16 Mar</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>St. Patrick's: Lucky You're With Us</strong><br><small>Seasonal, celebration spending</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-primary">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>31</td>
+                            <td>18 Mar</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>Georgia: Atlanta Hub Financiero</strong><br><small>Geo-targeted, comunidad latina creciente</small></td>
+                            <td>Geo: Georgia</td>
+                            <td>~8K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>32</td>
+                            <td>20 Mar</td>
+                            <td>Viernes 3PM</td>
+                            <td><strong>Primavera: Limpia Tus Finanzas</strong><br><small>Spring cleaning financial, organization</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>33</td>
+                            <td>23 Mar</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Tus Primeros 90 Días Con Nosotros</strong><br><small>Milestone celebration, retention</small></td>
+                            <td>New Q1 Reactivations</td>
+                            <td>~8K</td>
+                            <td><span class="badge badge-danger">Seguridad</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>34</td>
+                            <td>25 Mar</td>
+                            <td>Miércoles 2PM</td>
+                            <td><strong>Encuesta: ¿Cómo Podemos Mejorar?</strong><br><small>Feedback, NPS, engagement</small></td>
+                            <td>A + C (Activos)</td>
+                            <td>~118K</td>
+                            <td><span class="badge badge-primary">All-in-One</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>35</td>
+                            <td>27 Mar</td>
+                            <td>Viernes 11AM</td>
+                            <td><strong>Gracias Por Quedarte</strong><br><small>Appreciation, loyalty recognition</small></td>
+                            <td>All Active Users</td>
+                            <td>~40K</td>
+                            <td><span class="badge badge-danger">Seguridad</span></td>
+                        </tr>
+                        <tr class="email-row">
+                            <td>36</td>
+                            <td>30 Mar</td>
+                            <td>Lunes 10AM</td>
+                            <td><strong>Q1 Wrap-Up + Q2 Sneak Peek</strong><br><small>Quarter recap, upcoming features, retention</small></td>
+                            <td>A + B + C</td>
+                            <td>~163K</td>
+                            <td><span class="badge badge-accent">All-in-One</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(9,252,4,0.1); border-radius: 12px;">
+                <h4 style="color: var(--primary-green); margin-bottom: 15px;">Notas del Calendario</h4>
+                <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                    <li><strong>Total emails:</strong> 36 emails en Q1 (12 por mes)</li>
+                    <li><strong>Frecuencia:</strong> 3 emails/semana (Lunes, Miércoles, Viernes)</li>
+                    <li><strong>Horarios óptimos:</strong> 10AM (apertura), 12PM (lunch), 2-3PM (afternoon)</li>
+                    <li><strong>Todos los emails:</strong> EN + ES (bilingual)</li>
+                    <li><strong>Unsubscribe goal:</strong> Mantener &lt;1% por email</li>
+                </ul>
+            </div>
+        </section>
+
+        
+        <!-- KPI Dashboard -->
+        <section class="section">
+            <h2 class="section-title">Dashboard de KPIs Q1 2026</h2>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 20px; font-style: italic;">
+                * Los targets mostrados son <strong>SUGERENCIAS</strong> basadas en benchmarks de la industria FinTech. Deben validarse con el equipo.
+            </p>
+
+            <div class="dashboard-grid">
+                <!-- Primary KPIs -->
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">CHURN RATE (90+ días)</span>
+                        <span class="badge badge-danger">Primary</span>
+                    </div>
+                    <div class="kpi-value">71.67%</div>
+                    <div class="kpi-target">Target sugerido: 65% (-6.67 pts)</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">MONTHLY CHURN</span>
+                        <span class="badge badge-danger">Primary</span>
+                    </div>
+                    <div class="kpi-value">24.9%</div>
+                    <div class="kpi-target">Target sugerido: 20% (-4.9 pts)</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">REACTIVACIONES</span>
+                        <span class="badge badge-primary">Primary</span>
+                    </div>
+                    <div class="kpi-value">0</div>
+                    <div class="kpi-target">Target sugerido: 8,000 - 12,000</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">DIRECT DEPOSITS</span>
+                        <span class="badge badge-primary">Primary</span>
+                    </div>
+                    <div class="kpi-value">--</div>
+                    <div class="kpi-target">Target sugerido: +2,500 nuevos DD</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary-green); margin: 30px 0 20px;">Email Performance KPIs</h3>
+            <div class="dashboard-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">OPEN RATE</span>
+                        <span class="badge badge-accent">Email</span>
+                    </div>
+                    <div class="kpi-value">--%</div>
+                    <div class="kpi-target">Target: >26% (Benchmark: 25.78%)</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">CLICK-THROUGH RATE</span>
+                        <span class="badge badge-accent">Email</span>
+                    </div>
+                    <div class="kpi-value">--%</div>
+                    <div class="kpi-target">Target: >5.5% (Benchmark: 5.37%)</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">DELIVERY RATE</span>
+                        <span class="badge badge-accent">Email</span>
+                    </div>
+                    <div class="kpi-value">--%</div>
+                    <div class="kpi-target">Target: >95% (Benchmark: 95.19%)</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">UNSUBSCRIBE RATE</span>
+                        <span class="badge badge-accent">Email</span>
+                    </div>
+                    <div class="kpi-value">--%</div>
+                    <div class="kpi-target">Target: <1% per email</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary-green); margin: 30px 0 20px;">Engagement & Revenue KPIs</h3>
+            <div class="dashboard-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">WEEKLY ACTIVE USERS</span>
+                        <span class="badge badge-warning">Engagement</span>
+                    </div>
+                    <div class="kpi-value">--</div>
+                    <div class="kpi-target">Target: +25% vs baseline</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">AVG TRANSACTIONS/USER</span>
+                        <span class="badge badge-warning">Engagement</span>
+                    </div>
+                    <div class="kpi-value">--</div>
+                    <div class="kpi-target">Target: +20% vs baseline</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">REFERRAL RATE</span>
+                        <span class="badge badge-warning">Growth</span>
+                    </div>
+                    <div class="kpi-value">--%</div>
+                    <div class="kpi-target">Target: >5% of active users</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">LTV MARGIN</span>
+                        <span class="badge badge-warning">Revenue</span>
+                    </div>
+                    <div class="kpi-value">$15.60</div>
+                    <div class="kpi-target">Target: $18.00 (+$2.40)</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tracking Framework -->
+        <section class="section">
+            <h2 class="section-title">Framework de Tracking</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Métrica</th>
+                            <th>Fuente</th>
+                            <th>Frecuencia</th>
+                            <th>Owner</th>
+                            <th>Alert Threshold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Churn Rate</td>
+                            <td>Snowflake</td>
+                            <td>Semanal</td>
+                            <td>Analytics</td>
+                            <td>>75% = Red Alert</td>
+                        </tr>
+                        <tr>
+                            <td>Email Performance</td>
+                            <td>Insider CRM</td>
+                            <td>Por campaña + Weekly</td>
+                            <td>Marketing</td>
+                            <td>OR <20% = Review</td>
+                        </tr>
+                        <tr>
+                            <td>Reactivations</td>
+                            <td>Insider + Snowflake</td>
+                            <td>Diario</td>
+                            <td>Marketing</td>
+                            <td><500/week = Adjust</td>
+                        </tr>
+                        <tr>
+                            <td>Direct Deposits</td>
+                            <td>Galileo</td>
+                            <td>Semanal</td>
+                            <td>Product</td>
+                            <td><150/week = Push</td>
+                        </tr>
+                        <tr>
+                            <td>Transaction Volume</td>
+                            <td>Galileo</td>
+                            <td>Diario</td>
+                            <td>Analytics</td>
+                            <td>-10% WoW = Alert</td>
+                        </tr>
+                        <tr>
+                            <td>Unsubscribes</td>
+                            <td>Insider CRM</td>
+                            <td>Por campaña</td>
+                            <td>Marketing</td>
+                            <td>>1% = Pause & Review</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="background: rgba(239,68,68,0.1); padding: 20px; border-radius: 12px; border-left: 4px solid var(--danger);">
+                    <h4 style="color: var(--danger); margin-bottom: 10px;">Weekly Review Meeting</h4>
+                    <ul style="color: rgba(255,255,255,0.8); margin-left: 20px; font-size: 0.9rem;">
+                        <li><strong>Martes 10AM</strong></li>
+                        <li>Review all KPIs</li>
+                        <li>Email performance last week</li>
+                        <li>Adjustments needed?</li>
+                        <li>Blockers & solutions</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(41,107,255,0.1); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-blue);">
+                    <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Monthly Report</h4>
+                    <ul style="color: rgba(255,255,255,0.8); margin-left: 20px; font-size: 0.9rem;">
+                        <li><strong>Del 1-10 de cada mes</strong></li>
+                        <li>Full KPI dashboard review</li>
+                        <li>Budget vs actual</li>
+                        <li>ROI calculation</li>
+                        <li>Strategy adjustments</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Criteria -->
+        <section class="section">
+            <h2 class="section-title">Criterios de Éxito Q1 2026 (SUGERIDOS)</h2>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 20px; font-style: italic;">
+                * Estos criterios son sugerencias a validar con el equipo. Los números deben ajustarse según objetivos reales aprobados.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: rgba(16,185,129,0.1); padding: 25px; border-radius: 12px; border: 1px solid rgba(16,185,129,0.3);">
+                    <h4 style="color: var(--success); margin-bottom: 15px;">SUCCESS (Green)</h4>
+                    <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                        <li>Churn 90+ días: ≤65%</li>
+                        <li>Monthly churn: ≤20%</li>
+                        <li>Reactivaciones: ≥10,000</li>
+                        <li>New DD: ≥3,000</li>
+                        <li>Email OR: ≥26%</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(245,158,11,0.1); padding: 25px; border-radius: 12px; border: 1px solid rgba(245,158,11,0.3);">
+                    <h4 style="color: var(--warning); margin-bottom: 15px;">CAUTION (Yellow)</h4>
+                    <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                        <li>Churn 90+ días: 65-68%</li>
+                        <li>Monthly churn: 20-23%</li>
+                        <li>Reactivaciones: 6,000-9,999</li>
+                        <li>New DD: 1,500-2,999</li>
+                        <li>Email OR: 22-25%</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(239,68,68,0.1); padding: 25px; border-radius: 12px; border: 1px solid rgba(239,68,68,0.3);">
+                    <h4 style="color: var(--danger); margin-bottom: 15px;">AT RISK (Red)</h4>
+                    <ul style="color: rgba(255,255,255,0.8); margin-left: 20px;">
+                        <li>Churn 90+ días: >68%</li>
+                        <li>Monthly churn: >23%</li>
+                        <li>Reactivaciones: <6,000</li>
+                        <li>New DD: <1,500</li>
+                        <li>Email OR: <22%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps - Only Preparation -->
+        <section class="section">
+            <h2 class="section-title">Próximos Pasos: Preparación</h2>
+
+            <div style="background: rgba(9,252,4,0.05); padding: 25px; border-radius: 12px; border: 1px solid rgba(9,252,4,0.2);">
+                <h4 style="color: var(--primary-green); margin-bottom: 20px;">Diciembre 2025 - Preparación Q1 2026</h4>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div>
+                        <h5 style="color: white; margin-bottom: 10px;">Semana 1-2 (1-15 Dic)</h5>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px; font-size: 0.9rem;">
+                            <li>Aprobar plan y presupuesto Q1</li>
+                            <li>Revisar resultados parciales Q4</li>
+                            <li>Definir incentivos específicos</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 style="color: white; margin-bottom: 10px;">Semana 3-4 (16-31 Dic)</h5>
+                        <ul style="color: rgba(255,255,255,0.8); margin-left: 20px; font-size: 0.9rem;">
+                            <li>Configurar journeys en Insider</li>
+                            <li>Crear templates de email EN/ES</li>
+                            <li>Setup tracking dashboard en Snowflake</li>
+                            <li>Test emails con sample audience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; padding: 15px; background: rgba(41,107,255,0.1); border-radius: 8px;">
+                    <strong style="color: var(--primary-blue);">Ready for Launch:</strong>
+                    <span style="color: rgba(255,255,255,0.9);">6 Enero 2026 - Email #1 "Año Nuevo, Finanzas Nuevas"</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>MyBambu</strong> | Plan Estratégico de Retención Q1 2026</p>
+            <p>Documento generado: Noviembre 2025</p>
+            <p style="margin-top: 10px; color: rgba(255,255,255,0.3);">
+                Fuente de datos reales: comprehensive-customer-analysis.html
+            </p>
+            <p style="margin-top: 5px; color: rgba(255,255,255,0.3); font-style: italic;">
+                Nota: Los targets, KPIs y tácticas marcadas como "SUGERENCIA" son propuestas a validar.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
